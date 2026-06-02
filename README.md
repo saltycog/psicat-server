@@ -1,4 +1,4 @@
-# PsiCAT
+# PsiCAT Server
 
 A collection of bots and automations for personal use. Only intended for my own personal use, but hey, steal my code!
 
