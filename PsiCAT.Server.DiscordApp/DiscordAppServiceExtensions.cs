@@ -5,11 +5,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using PsiCAT.DiscordApp.Interactions;
-using PsiCAT.DiscordApp.Models;
-using PsiCAT.DiscordApp.Services;
+using PsiCAT.Server.DiscordApp.Interactions;
+using PsiCAT.Server.DiscordApp.Models;
+using PsiCAT.Server.DiscordApp.Services;
 
-namespace PsiCAT.DiscordApp;
+namespace PsiCAT.Server.DiscordApp;
 
 /// <summary>
 /// Extension methods for registering PsiCAT Discord application services.

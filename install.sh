@@ -5,9 +5,9 @@ set -euo pipefail
 # Builds and runs PsiCAT as a Docker container service
 #
 # Usage patterns:
-# 1. Remote (curl): /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/saltycog/PsiCAT/main/install.sh)"
-# 2. Remote (specific branch): /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/saltycog/PsiCAT/fix/branch-name/install.sh)" -- fix/branch-name
-# 3. Local (from cloned repo): cd /path/to/PsiCAT && sudo bash install.sh
+# 1. Remote (curl): /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/saltycog/psicat-server/main/install.sh)"
+# 2. Remote (specific branch): /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/saltycog/psicat-server/fix/branch-name/install.sh)" -- fix/branch-name
+# 3. Local (from cloned repo): cd /path/to/psicat-server && sudo bash install.sh
 
 INSTALL_DIR="/opt/psicat/discord"
 CLONE_BRANCH="${1:-main}"
@@ -68,7 +68,7 @@ else
     BUILD_DIR=$(mktemp -d)
     trap "rm -rf $BUILD_DIR" EXIT
 
-    if ! git clone -b "$CLONE_BRANCH" "https://github.com/saltycog/PsiCAT.git" "$BUILD_DIR" >/dev/null 2>&1; then
+    if ! git clone -b "$CLONE_BRANCH" "https://github.com/saltycog/psicat-server.git" "$BUILD_DIR" >/dev/null 2>&1; then
         log_error "Failed to clone repository from GitHub (branch: $CLONE_BRANCH)"
         exit 1
     fi
@@ -99,9 +99,9 @@ log_info "Created $INSTALL_DIR"
 
 # Copy default data from project if not already installed
 if [[ ! -f "$INSTALL_DIR/data/quotes.json" ]]; then
-    if [[ -f "${BUILD_DIR}/PsiCAT.Core/Data/quotes.json" ]]; then
+    if [[ -f "${BUILD_DIR}/PsiCAT.Server.Core/Data/quotes.json" ]]; then
         log_info "Copying default quotes from project..."
-        cp "${BUILD_DIR}/PsiCAT.Core/Data/quotes.json" "$INSTALL_DIR/data/quotes.json"
+        cp "${BUILD_DIR}/PsiCAT.Server.Core/Data/quotes.json" "$INSTALL_DIR/data/quotes.json"
     else
         log_info "Creating empty quotes database..."
         cat > "$INSTALL_DIR/data/quotes.json" << 'QUOTESFILE'
@@ -111,8 +111,8 @@ QUOTESFILE
     log_info "Quotes file created at: $INSTALL_DIR/data/quotes.json"
 fi
 
-if [[ -d "${BUILD_DIR}/PsiCAT.Core/wwwroot/avatars" ]]; then
-    for avatar in "${BUILD_DIR}/PsiCAT.Core/wwwroot/avatars"/*; do
+if [[ -d "${BUILD_DIR}/PsiCAT.Server.Core/wwwroot/avatars" ]]; then
+    for avatar in "${BUILD_DIR}/PsiCAT.Server.Core/wwwroot/avatars"/*; do
         if [[ -f "$avatar" ]]; then
             avatar_name=$(basename "$avatar")
             if [[ ! -f "$INSTALL_DIR/data/avatars/$avatar_name" ]]; then
@@ -125,7 +125,7 @@ fi
 
 if [[ ! -f "$INSTALL_DIR/appsettings.json" ]]; then
     log_info "Copying configuration template..."
-    cp "${BUILD_DIR}/PsiCAT.Core/appsettings.json" "$INSTALL_DIR/appsettings.json"
+    cp "${BUILD_DIR}/PsiCAT.Server.Core/appsettings.json" "$INSTALL_DIR/appsettings.json"
 fi
 
 # Check if this is an update from an older version (has .env file)
@@ -139,7 +139,7 @@ log_info "Data directory ready for mounting at: $INSTALL_DIR/data"
 
 # Copy docker-compose.yml
 log_info "Copying docker-compose.yml..."
-cp "${BUILD_DIR}/PsiCAT.Core/daemon/docker-compose.yml" "$INSTALL_DIR/docker-compose.yml"
+cp "${BUILD_DIR}/PsiCAT.Server.Core/daemon/docker-compose.yml" "$INSTALL_DIR/docker-compose.yml"
 
 echo ""
 

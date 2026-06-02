@@ -1,11 +1,11 @@
 using Discord;
 using Discord.Interactions;
 using Microsoft.Extensions.Logging;
-using PsiCAT.DiscordApp.Interactions.Autocomplete;
-using PsiCAT.DiscordApp.Models;
-using PsiCAT.DiscordApp.Services;
+using PsiCAT.Server.DiscordApp.Interactions.Autocomplete;
+using PsiCAT.Server.DiscordApp.Models;
+using PsiCAT.Server.DiscordApp.Services;
 
-namespace PsiCAT.DiscordApp.Interactions.Modules;
+namespace PsiCAT.Server.DiscordApp.Interactions.Modules;
 
 public partial class PsiCatModule
 {

@@ -27,7 +27,7 @@ There are two ways to install PsiCAT:
 Run the installation script directly from GitHub:
 
 ```bash
-sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/saltycog/PsiCAT/main/install.sh)"
+sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/saltycog/psicat-server/main/install.sh)"
 ```
 
 This will:
@@ -41,7 +41,7 @@ This will:
 Clone the repository and run the script from the repository root:
 
 ```bash
-git clone https://github.com/saltycog/PsiCAT.git
+git clone https://github.com/saltycog/psicat-server.git
 cd PsiCAT
 sudo bash install.sh
 ```

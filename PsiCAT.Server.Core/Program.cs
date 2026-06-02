@@ -1,4 +1,4 @@
-using PsiCAT.DiscordApp;
+using PsiCAT.Server.DiscordApp;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 

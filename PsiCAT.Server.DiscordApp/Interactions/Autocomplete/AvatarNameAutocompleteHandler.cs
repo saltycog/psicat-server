@@ -1,9 +1,9 @@
 using Discord;
 using Discord.Interactions;
 using Microsoft.Extensions.DependencyInjection;
-using PsiCAT.DiscordApp.Services;
+using PsiCAT.Server.DiscordApp.Services;
 
-namespace PsiCAT.DiscordApp.Interactions.Autocomplete;
+namespace PsiCAT.Server.DiscordApp.Interactions.Autocomplete;
 
 /// <summary>
 /// Provides autocomplete suggestions for avatar names in Discord interactions.

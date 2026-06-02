@@ -1,8 +1,8 @@
 using Discord.Interactions;
 using Microsoft.Extensions.Logging;
-using PsiCAT.DiscordApp.Services;
+using PsiCAT.Server.DiscordApp.Services;
 
-namespace PsiCAT.DiscordApp.Interactions.Modules;
+namespace PsiCAT.Server.DiscordApp.Interactions.Modules;
 
 [Group("psicat", "PsiCAT commands")]
 public partial class PsiCatModule : InteractionModuleBase<SocketInteractionContext>

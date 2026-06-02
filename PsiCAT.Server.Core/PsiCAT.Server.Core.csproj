@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PsiCAT.DiscordApp\PsiCAT.DiscordApp.csproj" />
+    <ProjectReference Include="..\PsiCAT.Server.DiscordApp\PsiCAT.Server.DiscordApp.csproj" />
   </ItemGroup>
 
   <!-- Include daemon directory in publish output -->

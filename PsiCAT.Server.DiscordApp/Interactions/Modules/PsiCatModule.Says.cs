@@ -1,9 +1,9 @@
 using Discord;
 using Discord.Interactions;
 using Microsoft.Extensions.Logging;
-using PsiCAT.DiscordApp.Models;
+using PsiCAT.Server.DiscordApp.Models;
 
-namespace PsiCAT.DiscordApp.Interactions.Modules;
+namespace PsiCAT.Server.DiscordApp.Interactions.Modules;
 
 public partial class PsiCatModule
 {

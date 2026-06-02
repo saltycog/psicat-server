@@ -4,10 +4,10 @@ using Discord.WebSocket;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using PsiCAT.DiscordApp.Interactions;
-using PsiCAT.DiscordApp.Models;
+using PsiCAT.Server.DiscordApp.Interactions;
+using PsiCAT.Server.DiscordApp.Models;
 
-namespace PsiCAT.DiscordApp.Services;
+namespace PsiCAT.Server.DiscordApp.Services;
 
 public class DiscordBotService : IHostedService
 {

@@ -3,9 +3,9 @@ using Discord.WebSocket;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using PsiCAT.DiscordApp.Models;
+using PsiCAT.Server.DiscordApp.Models;
 
-namespace PsiCAT.DiscordApp.Services;
+namespace PsiCAT.Server.DiscordApp.Services;
 
 /// <summary>
 /// Background service that automatically sends random quotes to a configured Discord channel at regular intervals.

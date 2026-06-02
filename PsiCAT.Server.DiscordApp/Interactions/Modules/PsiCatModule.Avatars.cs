@@ -3,7 +3,7 @@ using Discord;
 using Discord.Interactions;
 using Microsoft.Extensions.Logging;
 
-namespace PsiCAT.DiscordApp.Interactions.Modules;
+namespace PsiCAT.Server.DiscordApp.Interactions.Modules;
 
 public partial class PsiCatModule
 {

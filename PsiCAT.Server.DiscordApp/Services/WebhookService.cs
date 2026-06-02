@@ -1,9 +1,9 @@
 using Discord;
 using Discord.Webhook;
 using Microsoft.Extensions.Logging;
-using PsiCAT.DiscordApp.Models;
+using PsiCAT.Server.DiscordApp.Models;
 
-namespace PsiCAT.DiscordApp.Services;
+namespace PsiCAT.Server.DiscordApp.Services;
 
 public class WebhookService
 {

@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace PsiCAT.DiscordApp.Models;
+namespace PsiCAT.Server.DiscordApp.Models;
 
 public class QuoteCollection
 {

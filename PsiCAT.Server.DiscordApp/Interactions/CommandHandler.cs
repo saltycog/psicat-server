@@ -4,7 +4,7 @@ using Discord.Interactions;
 using Discord.WebSocket;
 using Microsoft.Extensions.Logging;
 
-namespace PsiCAT.DiscordApp.Interactions;
+namespace PsiCAT.Server.DiscordApp.Interactions;
 
 public class CommandHandler
 {

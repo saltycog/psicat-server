@@ -1,4 +1,4 @@
-namespace PsiCAT.DiscordApp.Interactions;
+namespace PsiCAT.Server.DiscordApp.Interactions;
 
 public static class InteractionEndpoints
 {

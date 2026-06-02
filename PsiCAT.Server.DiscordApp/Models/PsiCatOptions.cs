@@ -1,4 +1,4 @@
-namespace PsiCAT.DiscordApp.Models;
+namespace PsiCAT.Server.DiscordApp.Models;
 
 public class PsiCatOptions
 {

@@ -2,9 +2,9 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using PsiCAT.DiscordApp.Models;
+using PsiCAT.Server.DiscordApp.Models;
 
-namespace PsiCAT.DiscordApp.Services;
+namespace PsiCAT.Server.DiscordApp.Services;
 
 public class QuoteService
 {

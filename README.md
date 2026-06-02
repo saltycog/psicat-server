@@ -4,7 +4,7 @@ A collection of bots and automations for personal use. Only intended for my own 
 
 ### Available Components
 
-- **[PsiCAT.DiscordApp](PsiCAT.DiscordApp)** - Discord app/bot for mostly pointless fun n' gags among my friends on a personal Discord server.
+- **[PsiCAT.Server.DiscordApp](PsiCAT.Server.DiscordApp)** - Discord app/bot for mostly pointless fun n' gags among my friends on a personal Discord server.
 
 ---
 ## Quick Start - Remote Installation
@@ -12,7 +12,7 @@ A collection of bots and automations for personal use. Only intended for my own 
 Deploy PsiCAT directly on a Linux server with one command:
 
 ```bash
-sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/saltycog/PsiCAT/main/install.sh)"
+sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/saltycog/psicat-server/main/install.sh)"
 ```
 
 ### Fresh Installation
@@ -49,8 +49,8 @@ sudo systemctl start psicat-discord
 
 For detailed deployment and service management information, see the documentation in each component:
 
-- **PsiCAT.DiscordApp**: [PsiCAT.DiscordApp/daemon/README.md](PsiCAT.DiscordApp/daemon/README.md)
-- **Bot Development**: [PsiCAT.DiscordApp/README.md](PsiCAT.DiscordApp/README.md)
+- **PsiCAT.Server.DiscordApp**: [PsiCAT.Server.DiscordApp/daemon/README.md](PsiCAT.Server.DiscordApp/daemon/README.md)
+- **Bot Development**: [PsiCAT.Server.DiscordApp/README.md](PsiCAT.Server.DiscordApp/README.md)
 
 ### Service Management
 
