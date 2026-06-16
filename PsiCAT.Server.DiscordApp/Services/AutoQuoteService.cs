@@ -167,12 +167,13 @@ public class AutoQuoteService : IHostedService, IDisposable
             return;
         }
 
-        SocketGuild? guild = _client.GetGuild(_discordOptions.Value.GuildId);
+        ulong guildId = _discordOptions.Value.GuildIds.FirstOrDefault();
+        SocketGuild? guild = _client.GetGuild(guildId);
         if (guild == null)
         {
             _logger.LogError(
                 "Guild not found: {GuildId}",
-                _discordOptions.Value.GuildId);
+                guildId);
             return;
         }
 
@@ -182,7 +183,7 @@ public class AutoQuoteService : IHostedService, IDisposable
             _logger.LogError(
                 "Channel not found: {ChannelId} in guild {GuildId}",
                 _psiCatOptions.Value.AutoQuoteChannelId,
-                _discordOptions.Value.GuildId);
+                guildId);
             return;
         }
 

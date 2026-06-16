@@ -74,14 +74,30 @@ public class DiscordBotService : IHostedService
 
         if (_options.Value.EnableCommandSync)
         {
-            try
+            foreach (ulong guildId in _options.Value.GuildIds)
             {
-                await _interactions.RegisterCommandsToGuildAsync(_options.Value.GuildId);
-                _logger.LogInformation("Commands registered to guild {GuildId}", _options.Value.GuildId);
+                try
+                {
+                    await _interactions.RegisterCommandsToGuildAsync(guildId);
+                    _logger.LogInformation("Commands registered to guild {GuildId}", guildId);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Failed to register commands to guild {GuildId}", guildId);
+                }
             }
-            catch (Exception ex)
+
+            if (_options.Value.GlobalCommandSync)
             {
-                _logger.LogError(ex, "Failed to register commands to guild");
+                try
+                {
+                    await _interactions.RegisterCommandsGloballyAsync();
+                    _logger.LogInformation("Commands registered globally");
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Failed to register commands globally");
+                }
             }
         }
     }
